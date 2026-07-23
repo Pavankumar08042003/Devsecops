@@ -1,5 +1,5 @@
 resource "aws_vpc" "name" {
-  cidr_block = "192.168.0.3/16"
+  cidr_block = "192.168.0.4/16"
   tags = {
     "Name" : "Terraform-VPC"
   }
