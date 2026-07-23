@@ -4,4 +4,11 @@ resource "aws_vpc" "name" {
     "Name" : "Terraform-VPC"
   }
 }
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.name.id
+
+  tags = {
+    Name = "my-internet-gateway"
+  }
+}
 
