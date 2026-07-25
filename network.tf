@@ -1,9 +1,12 @@
 resource "aws_vpc" "name" {
-  cidr_block = "192.168.0.0/16"
+
+  cidr_block = "192.168.1.3/16"
   tags = {
     "Name" : "Terraform-VPC"
   }
 }
+#added igw for this code
+
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.name.id
 
