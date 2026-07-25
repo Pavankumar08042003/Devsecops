@@ -1,0 +1,33 @@
+name : Terraform Apply
+on:
+  push:
+    branches:
+        - Devlop
+
+  pull_requests:
+    branches:
+      - Devlop
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repository
+        Uses: actions/checkot@v7
+
+      - name: Aws Credentials
+        uses: aws-actions/configure-aws-credentials@v6.2.3
+        with:
+          aws-region: us-east-1
+          aws-access-key-id: ${{secrets.AWS_KEY}}
+          aws-secret-access-key: ${{secrtes.AWS_vALUE}} 
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v4
+
+      - name: Initialize terraform
+        run: terraform init 
+
+      - name: APPLY Terraform
+        run: terraform apply -auto-approve
+                 
+         
