@@ -5,7 +5,7 @@ on:
     branches:
         - Devlop
 
-  pull_requests:
+  pull_request:
     branches:
       - Devlop
 jobs:
@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
-        Uses: actions/checkot@v7
+        uses: actions/checkout@v7
 
       - name: Aws Credentials
         uses: aws-actions/configure-aws-credentials@v6.2.3
         with:
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_KEY }}
-          aws-secret-access-key: ${{ secrtes.AWS_VALUE }} 
+          aws-secret-access-key: ${{ secrets.AWS_VALUE }} 
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
