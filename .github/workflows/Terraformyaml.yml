@@ -10,7 +10,7 @@ on:
       - Devlop
 jobs:
   terraform:
-    runs-on: ubuntu-latest
+    runs-on: low cpu
     steps:
       - name: Clone the repository
         uses: actions/checkout@v7
