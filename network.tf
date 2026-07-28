@@ -15,3 +15,12 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 
+terraform {
+  backend "s3" {
+    bucket = "devopsbucket08"
+    key    = "statefile"
+    region = "ap-south-1"
+  }
+}
+
+
