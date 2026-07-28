@@ -23,7 +23,7 @@ jobs:
   terraform:
     runs-on: low-cpu
     steps:
-      - name: Clone the repository
+      - name: Clone this repository
         uses: actions/checkout@v4
 
       - name: AWS Credentials
