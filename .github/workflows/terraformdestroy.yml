@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   terraform:
-    runs-on: low-cpu
+    runs-on: low cpu
     steps:
       - name: Clone this repository
         uses: actions/checkout@v4
