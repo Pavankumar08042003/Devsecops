@@ -5,11 +5,9 @@ on:
       TerraformDestroy:
         description: "Approve terraform destroy"
         required: true
-        default: "No"
-        type: choice
-        options:
-          - No
-          - Yes
+        default: false
+        type: boolean
+        
 
 permissions:
   id-token: write
@@ -37,7 +35,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Destroy
-        if: ${{ github.event.inputs.TerraformDestroy == 'Yes' }}
+        if: ${{ github.event.inputs.TerraformDestroy }}
         run: terraform destroy -auto-approve
 
       - name: "Check runner's IP"
