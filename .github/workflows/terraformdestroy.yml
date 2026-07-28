@@ -8,8 +8,8 @@ on:
         default: "No"
         type: choice
         options:
-          - Yes
-          - No
+          - "Yes"
+          - "No"
 
 permissions:
   id-token: write
