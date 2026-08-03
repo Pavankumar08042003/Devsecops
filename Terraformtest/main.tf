@@ -1,34 +1,35 @@
-resource "aws_vpc" "Terra-vpc" {
+resource "aws_vpc" "Terra-vp" {
+
   cidr_block = var.vpc_cidr
   tags = {
-    name = "Terra-vpc "
+    Name = "Terra-vp "
 
   }
 }
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.Terra-vpc.id
+  vpc_id = aws_vpc.Terra-vp.id
   tags = {
-    name = "igw"
+    Name = "igw"
   }
 }
 
 resource "aws_subnet" "sub1" {
   cidr_block = var.sub1
-  vpc_id     = aws_vpc.Terra-vpc.id
+  vpc_id     = aws_vpc.Terra-vp.id
   tags = {
-    name = "sub1"
+    Name = "sub1"
 
   }
 }
 
 resource "aws_subnet" "sub2" {
   cidr_block = var.sub2
-  vpc_id     = aws_vpc.Terra-vpc.id
+  vpc_id     = aws_vpc.Terra-vp.id
   tags = {
-    name = "sub2"
+    Name = "sub2"
 
   }
 }
 
-  
+

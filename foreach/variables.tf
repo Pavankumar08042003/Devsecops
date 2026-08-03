@@ -1,0 +1,5 @@
+variable "Vpccidr" {
+}
+variable "subnets" {
+
+}
