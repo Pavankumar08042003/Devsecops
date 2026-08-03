@@ -8,17 +8,16 @@ on:
         default: "No"
         type: choice
         options:
-          - No
-          - Yes
+          - "Yes"
+          - "No"
 
 permissions:
   id-token: write
   contents: read
 
-
 jobs:
   terraform:
-    runs-on: low-cpu
+    runs-on: low cpu
     steps:
       - name: Clone this repository
         uses: actions/checkout@v4
@@ -28,7 +27,7 @@ jobs:
         with:
           aws-region: us-east-1
           aws-access-key-id: ${{ secrets.AWS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_VALUE }}
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v4
