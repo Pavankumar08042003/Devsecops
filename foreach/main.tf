@@ -1,7 +1,7 @@
 resource "aws_vpc" "Hydvpc" {
   cidr_block = var.Vpccidr
   tags = {
-    Name = "Hydvpc"
+    Name = "Hydvp"
   }
 
 }
@@ -14,7 +14,7 @@ resource "aws_subnet" "Subnets" {
     Name = "Terraform-${each.key}"
   }
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 
 }
